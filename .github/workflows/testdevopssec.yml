@@ -25,7 +25,7 @@ jobs:
 
       # Run analyzers
     - name: security-devops-action
-      uses: microsoft/security-devops-action@v1.11.0
+      uses: microsoft/security-devops-action@latest
       id: msdo
 
       with:
@@ -40,7 +40,7 @@ jobs:
 
       # 上传警告文件作为工作流工件
     - name: Upload alerts file as a workflow artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:  
         name: alerts
         path: ${{ steps.msdo.outputs.sarifFile }}
